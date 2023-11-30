@@ -144,6 +144,8 @@ def BoutonC ():
 fenetre = Tk()
 fenetre.title("Calculatrice programmable")
 fenetre.geometry("360x450")
+
+# Programme
 calculatrice = Calculator()
 
 # Ecran des calculs
