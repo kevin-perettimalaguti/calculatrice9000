@@ -69,6 +69,12 @@ class Calculator():
         self.phase2 = float(nb[1])
         self.final = self.phase1 * self.phase2
         self.entry.set(str(self.final))
+        self.init()
+
+    def Pourcentage(self):
+        nb = float(self.text)
+        resultat = nb / 100
+        self.entry.set(str(resultat))
         self.init()    
 
 # Fonctions pour activer tous les boutons
@@ -137,7 +143,10 @@ def BoutonE ():
 
 def BoutonC (): 
     calculatrice.entry.set("")
-    calculatrice.init()  
+    calculatrice.init()
+
+def BoutonPourcentage():
+    calculatrice.Pourcentage() 
 
 
 # La fenêtre principale graphique
@@ -164,7 +173,7 @@ bouton8 = Button(fenetre, text="8", command=Bouton8, width=7, font=("Arial", 12)
 bouton9 = Button(fenetre, text="9", command=Bouton9, width=7, font=("Arial", 12), height=2)
 boutonC = Button(fenetre, text="C", command=BoutonC, width=7, font=("Arial", 12), height=2) 
 bouton0 = Button(fenetre, text="0", command=Bouton0, width=7, font=("Arial", 12), height=2)
-boutonPourcentage = Button(fenetre, text="%", width=7, font=("Arial", 12), height=2)
+boutonPourcentage = Button(fenetre, text="%", command=BoutonPourcentage, width=7, font=("Arial", 12), height=2)
 boutonParenthèseGauche = Button(fenetre, text="(", width=7, font=("Arial", 12), height=2)
 boutonParenthèseDroite = Button(fenetre, text=")", width=7, font=("Arial", 12), height=2)
 boutonPoint = Button(fenetre, text=".", command=BoutonF, width=7, font=("Arial", 12), height=2)
